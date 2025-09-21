@@ -366,7 +366,7 @@ resource "aws_instance" "pro-JS-server" {
         yum update -y
         yum install -y mariadb105-server
 
-        mysql -h ${aws_db_instance.mysql.address} -P 3306 -u admin -psankar-2002-08 <<EOSQL
+        mysql -h ${aws_db_instance.proDBinstance.address} -P 3306 -u admin -psankar-2002-08 <<EOSQL
         CREATE DATABASE IF NOT EXISTS webappdb;
         USE webappdb;
         CREATE TABLE IF NOT EXISTS transactions (
@@ -533,7 +533,7 @@ resource "aws_lb_target_group" "web_tg" {
 #####################
 # Internal APP ALB
     resource "aws_lb" "app_alb" {
-    name               = "internal-app-alb"
+    name               = "app-internal-alb"
     internal           = true
     load_balancer_type = "application"
     security_groups    = [aws_security_group.ILB.id]
