@@ -37,22 +37,23 @@ variable "pvt-sub1-cidr" {
 variable "pvt-sub2-cidr" {
     default = "10.0.4.0/24"
 }
+##############|DB USER & PASSWORD|##############
 variable "db-username" {
     default = "admin"
 }
 variable "db-password" {
-    default = "sankar-2002-08"
+    default = "your password"
     sensitive = true
 }
+##############|AMI|##############
 variable "ami" {
     default = "ami-00ca32bbc84273381" 
 }
-# variable "instance_type" {
-#     default = "t3.nano"
-# }
+##############|Instance Type|##############
 variable "instance_type" {
-default = "t2.micro"
+     default = "t3.nano"
 }
+##############|KEY PARI|##############
 variable "key_pari" {
-    default = "N.virginia"
+    default = "your key"
 }
